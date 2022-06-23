@@ -16,8 +16,7 @@ public class CarScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // Rigidbodyコンポーネントを取得する
-        rigidbody = GetComponent<Rigidbody>();
+
     }
 
     // Update is called once per frame
@@ -29,6 +28,8 @@ public class CarScript : MonoBehaviour
             // jump確認用のboolを見てJump可能であれば
             if (canJump == true)
             {
+                // Rigidbodyコンポーネントを取得する
+                rigidbody = GetComponent<Rigidbody>();
                 // その場でジャンプするコード
                 rigidbody.velocity = new Vector3(0, jumpPower, 0);
                 // jump確認用のboolをJumpできない判定にする

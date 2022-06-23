@@ -10,7 +10,7 @@ public class MoveScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // ゲームオブジェクトが後ろへ進み車が前に進むように見える為のコード
+        // 障害物を一定の速度でプレイヤー側へ進めるコード
         this.transform.Translate(Vector3.back * moveSpeed * Time.deltaTime);
     }
 }
