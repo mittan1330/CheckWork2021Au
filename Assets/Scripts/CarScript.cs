@@ -7,11 +7,12 @@ using UnityEngine.SceneManagement;
 public class CarScript : MonoBehaviour
 {
     // 車がJumpする際の力を決める
-    public float jumpPower = 10;
+    public float JumpPower = 10;
     // プレイヤーのRigidbody
     Rigidbody rigidbody;
     // jump確認用のbool
-    bool canJump = true;
+    
+
 
     // Start is called before the first frame update
     void Start()
@@ -26,35 +27,35 @@ public class CarScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             // jump確認用のboolを見てJump可能であれば
-            if (canJump == true)
+            //if (Jump可能か判定)
             {
                 // Rigidbodyコンポーネントを取得する
-                rigidbody = GetComponent<Rigidbody>();
+
                 // その場でジャンプするコード
-                rigidbody.velocity = new Vector3(0, jumpPower, 0);
+
                 // jump確認用のboolをJumpできない判定にする
-                canJump = false;
+
             }
         }
     }
 
-    private void OnTriggerEnter(Collider collision)
+    /*private void Trigger形式で衝突した際に呼び出す関数
     {
         // もしtagで「"Hurdle"」が付いているゲームオブジェクトに当たったら
-        if (collision.gameObject.tag == "Hurdle")
+        if ()
         {
             // 「"Fail"」シーンをロードする
             SceneManager.LoadScene("Fail");
         }
-    }
+    }*/
 
-    private void OnCollisionEnter(Collision collision)
+    /*private void Collision形式で衝突した際に呼び出す関数
     {
         // もし車が地面に着地したなら
-        if(collision.gameObject.tag == "Road")
+        if()
         {
             // jump確認用のboolをジャンプ可能な判定にする
-            canJump = true;
+            
         }
-    }
+    }*/
 }
